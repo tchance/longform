@@ -1,0 +1,140 @@
+<!DOCTYPE HTML >
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="scripts/jquery.js"></script>
+<script src="scripts/iscroll.js"></script>
+<script src="scripts/jquery.stickyscroll.js"></script>
+<script src="scripts/jquery.backstretch.js"></script>
+<script src="scripts/jquery.scrollTo.min.js"></script>
+<script src="scripts/waypoints.min.js"></script>
+<script src="scripts/waypoints-sticky.js"></script>
+<script src="app.js"></script>
+<link href="styles/foundation.css" rel="stylesheet" type="text/css">
+<link href="fonts/stylesheet.css" rel="stylesheet" type="text/css">
+<link href="styles/style.css" rel="stylesheet" type="text/css">
+<script>
+	$(document).ready(function(){
+	//couple of variables for later use
+	var windowHeight = $(window).height();
+	var centerHeight = windowHeight/4;
+	
+	// hide all those things that are supposed to pop in later
+	$("#popin1").hide();
+	$("#popin2").hide();
+	//$(".section").css({height:windowHeight});
+	$("#headline").css({marginTop:centerHeight});
+	
+	//in the beginning, the head and the deck fade in 
+	$("#headline").hide().fadeIn("slow");
+	$("#deck").hide().fadeIn("slow");
+	
+	//press the down arrow, and down you go
+	$("#titledown").click(function(e){
+		e.preventDefault();
+		$('html, body').scrollTo($("#page1"), 'slow');
+	});
+	
+	$("#topage2").click(function(e){
+		e.preventDefault();
+		$('html, body').scrollTo($("#page2"), 'slow');
+	});
+	
+	//when you hit the first page, make boxes appear
+	$("#page1").waypoint(function(){ 
+		$("#popin1").fadeIn("slow");	
+	});
+	
+	//when you hit what the div called "event1", 
+	$("#event1").waypoint(function(){ 
+		$("#popin1").fadeOut("slow", function(){$("#popin2").fadeIn("slow");});
+		}, { context: '#thetext' });
+	
+	});
+
+</script>
+
+<style type="text/css">
+	body { font-size: 16px; }
+	#popin1 { margin-top: 100px;}
+	#popin2 { margin-top: 100px;}
+	.section { width: 1024px; }
+	.slide { height: 768px; }
+	#background{ background-image: url('images/title.jpg'); position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: -2; }
+	#headline { position: absolute; margin-left: 60px; font-family: 'akzidenz-grotesk_bq_extra_cBd'; letter-spacing: 50%; font-size: 130px; color: #962423; line-height: 115px; text-shadow: 1px 1px 1px #555; }
+	#overline { position: absolute; margin-top: 130px; font-family: 'akzidenz-grotesk_bq_extra_cBd'; font-size: 40px; margin-left: 60px; height: 40px; }
+	#byline { position: absolute; margin-left: 60px; font-family: 'georgia'; font-size: 20px; color: #ffffff; margin-top:-150px; text-shadow: 1px 1px 1px #555; }
+	#titledown { position: absolute; left: 400px; top: 420px; }
+	#page1 { background-color: #ffffff;}
+	#page2 { background-image: url('images/34_COLTS21_MK.jpg'); background-size:cover; }
+	.lede {font-size: 20px; padding-top: 100px;}
+	.margin { margin-top: 100px; }
+	.text {  padding-bottom: 100px; margin-top: 100px;}
+	#thetext {height: 600px; overflow: scroll;}
+	.textdown { width: 100%; text-align: center; }
+</style>
+
+</head>
+
+<body>
+
+<div id="background" class="section">
+</div>
+	<div id="title" class="section slide" data-stellar-background-ratio="0.5">
+		<div id="overline">TOM CREAN:</div>
+		<div id="headline">THE ROOTS <br>OF AMBITION</div>
+		<div id="titledown"><img src="images/down.png" height="50px" width="50px"></div>
+	</div>
+	
+	<div id="page1" class="section">
+		<div class="row text">
+			
+			<div id="thetext" class="large-7 push-1 columns">
+			<p id="firstlede" class="lede">MOUNT PLEASANT, Mich. -- He was a benchwarmer on his high school basketball team, a decent shooter but not strong or athletic. Even friends say he was easy to push around on the court.
+</p>
+			<p>A scan through box scores during his senior year at Mount Pleasant High shows he seldom played, and when he did, the score line usually read zeros across.</p>
+			
+			<p>But Tom Crean was outgoing and popular, voted best dressed in his senior class, according to the school's 1984 yearbook. He had a fondness for Izod polo shirts popular at the time, sometimes with the collar rolled up.</p>
+
+			<p>Beneath the surface, though, he watched as his parents' marriage fell apart and his father became more and more distant. He had a serious health scare as a high school freshman, collapsing in the school cafeteria.</p>
+
+			<div id="event1"></div><p>That Crean became a preeminent college basketball coach -- without being from a basketball family, without being a great student, without money to help carry the dream -- is a testament to a drive and relentlessness that even longtime basketball observers describe as unique.</p>
+			
+			<p>Where did that drive come from? Crean has talked often about his connection to the Harbaugh family -- especially with his brothers-in-law, Jim and John Harbaugh, coaching against each other in the upcoming Super Bowl — but he hasn't talked much about what forged him while growing up in Mount Pleasant, a town of 26,000.</p>
+
+			<p>It is home to Central Michigan University, but the Creans hardly ran with the college crowd after moving there in 1968 from neighboring Harrison, Mich.</p>
+
+			<p>"We didn't have insurance and I still remember his hospital bill," said Crean's father, also named Tom, about his son's birth. "It was $250. Imagine that today."</p>
+
+			<p>The elder Crean moved the family to Mount Pleasant when he got a job as a barber in a state-run home for the mentally ill there. He later worked in patient care.</p>
+
+			<p>Marjorie Crean, Tom's mother, worked a variety of jobs, including as the secretary at a marble company. A sister, Michelle, was born in 1970. The Creans also took in foster children.</p>
+			
+			<div id="topage2" class="textdown"><img src="images/down.png" height="50px" width="50px"></div>
+			</div>
+			
+			<div class="large-4 column">
+				<div id="popin1">
+					<img src="images/crean_6.jpg">
+					<p class="caption"><h6>Tom Crean at four months old.</p>
+				</div>
+				<div id="popin2">
+					<img src="images/crean_4.jpg">
+					<p class="caption"><h6>Tom Crean with his father in 1966</p>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+	</div>
+	
+	<div id="page2" class="section slide">
+	
+	
+	</div>
+
+
+</body>
+
+</HTML>
