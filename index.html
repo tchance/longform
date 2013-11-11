@@ -45,8 +45,9 @@
 		$("#popin1").fadeIn("slow");	
 	});
 	
-	//when you hit what the div called "event1", 
+	//when you hit the div called "event1", do this 
 	$("#event1").waypoint(function(){ 
+		//nesting the fade as a callback helps them not overlap eachother
 		$("#popin1").fadeOut("slow", function(){$("#popin2").fadeIn("slow");});
 		}, { context: '#thetext' });
 	
